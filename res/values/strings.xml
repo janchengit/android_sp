@@ -2,23 +2,21 @@
 <resources>
 
     <string name="app_name">eshopping</string>
-    
     <string name="str_btn_homepage">首页</string>
     <string name="str_btn_shoppingcart">购物车</string>
     <string name="str_btn_myaccount">我</string>
-    
-    
     <string name="cart_goods">全部宝贝</string>
     <string name="cart_offer_goods">特价宝贝</string>
-    
     <string name="myaccount_loves">喜欢</string>
     <string name="myaccount_track">我的足迹</string>
     <string name="myaccount_purchased">已购买</string>
-    
-    
-    
-    
     <string name="zero">零</string>
     <string name="str_null">空</string>
-    
+    <string name="input_search_key">输入查询的关键字</string>
+    <string name="search_history">搜索历史</string>
+    <string name="search_result">搜索结果</string>
+    <string name="clear_search_history">清除搜索历史</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

@@ -4,6 +4,7 @@ import com.envee.eshopping.fragment.HomeFragment;
 import com.envee.eshopping.fragment.MyaccountFragment;
 import com.envee.eshopping.fragment.ShoppingcartFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Eshopping extends FragmentActivity implements OnClickListener {
 
@@ -31,18 +33,19 @@ public class Eshopping extends FragmentActivity implements OnClickListener {
 
 	private int nSelectedBtnId = -1;
 
-	// TODO: The fragment pages (home page/shopping cart/my account)
+	// 2. TODO: The fragment pages (home page/shopping cart/my account)
 	private HomeFragment fragHomepage = null;
 	private ShoppingcartFragment fragShoppingCart = null;
 	private MyaccountFragment fragMyaccount = null;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_content_btnmenu);
+		setContentView(R.layout.eshopping_activity);
 		initSavedData();
 		initView();
-		selectBottomBtnById(arrBotBtnId[1]);
+		selectBottomBtnById(arrBotBtnId[0]);
 	}
 
 	private void initSavedData() {

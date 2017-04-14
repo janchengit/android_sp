@@ -4,7 +4,13 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical" >
-    
+
+    <ImageView android:id="@+id/btn_search_activity"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/search"
+        />
     
         <ScrollView
         android:layout_width="match_parent"
