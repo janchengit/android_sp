@@ -1,5 +1,6 @@
 package com.envee.eshopping;
 
+import com.envee.eshopping.data.GoodsData;
 import com.envee.eshopping.fragment.HomeFragment;
 import com.envee.eshopping.fragment.MyaccountFragment;
 import com.envee.eshopping.fragment.ShoppingcartFragment;
@@ -50,6 +51,8 @@ public class Eshopping extends FragmentActivity implements OnClickListener {
 
 	private void initSavedData() {
 		// TODO: Initialize saved data
+		GoodsData goodsdata = new GoodsData(this);
+		// Read json and fill the goods data db
 	}
 
 	private void initView() {
