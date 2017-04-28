@@ -10,29 +10,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class GoodsSQLiteOpenHelper extends SQLiteOpenHelper {
 
-    private static String dbName = "goods.db";
-	
-    public GoodsSQLiteOpenHelper(Context context){
-    	super(context, dbName, null, 1);
-    }
-    
-	private int id;
-	private int price;
-	private int sales;
-	private int counts;
-	private String name;
-	private String describe;
-	private List<String> listPicShow;
-	private List<Evaluation> listEvaluation;
-    
+	private static String dbName = "goods.db";
+
+	public GoodsSQLiteOpenHelper(Context context) {
+		super(context, dbName, null, 1);
+	}
+
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
-		db.execSQL("create table goodstable(id integer primary key autoincrement," 
-				+ "name varchar,"
-				+ "price integer,"
-				+ "describe vatchar,"
-				+ "etcfile varchar");
+		db.execSQL("create table goodstable(id integer,name varchar,price integer,describe varchar,etcfile varchar);");
 	}
 
 	@Override

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:Android="http://schemas.android.com/apk/res/android"
+    Android:layout_width="fill_parent"
+    Android:layout_height="fill_parent"
+    Android:background="@color/bg_White"
+    Android:orientation="horizontal" >
+
+    <ImageView
+        Android:id="@+id/image"
+        Android:layout_width="wrap_content"
+        Android:layout_height="wrap_content"
+        Android:layout_margin="5dp" />
+
+    <LinearLayout
+        Android:layout_width="wrap_content"
+        Android:layout_height="wrap_content"
+        Android:orientation="vertical" >
+
+        <LinearLayout
+            Android:layout_width="wrap_content"
+            Android:layout_height="wrap_content"
+            Android:orientation="horizontal" >
+
+            <TextView
+                Android:layout_width="wrap_content"
+                Android:layout_height="wrap_content"
+                Android:text="@string/goods_name"
+                Android:textColor="@color/tv_Black"
+                Android:textSize="22sp" />
+
+            <TextView
+                Android:id="@+id/name"
+                Android:layout_width="0dp"
+                Android:layout_height="wrap_content"
+                Android:layout_marginLeft="5dp"
+                Android:layout_weight="1"
+                Android:textColor="@color/tv_Black"
+                Android:textSize="22sp" />
+
+            <TextView
+                Android:layout_width="wrap_content"
+                Android:layout_height="wrap_content"
+                Android:text="@string/goods_price"
+                Android:textColor="@color/tv_Red"
+                Android:textSize="22sp" />
+
+            <TextView
+                Android:id="@+id/price"
+                Android:layout_width="0dp"
+                Android:layout_height="wrap_content"
+                Android:layout_marginLeft="5dp"
+                Android:layout_weight="1"
+                Android:textColor="@color/tv_Red"
+                Android:textSize="22sp" />
+        </LinearLayout>
+
+        <TextView
+            Android:id="@+id/describe"
+            Android:layout_width="wrap_content"
+            Android:layout_height="wrap_content"
+            Android:ellipsize="end"
+            Android:singleLine="true"
+            Android:textColor="@color/tv_Black"
+            Android:textSize="13sp" />
+
+        <LinearLayout
+            Android:layout_width="wrap_content"
+            Android:layout_height="wrap_content"
+            Android:orientation="horizontal" >
+
+            <TextView
+                Android:layout_width="wrap_content"
+                Android:layout_height="wrap_content"
+                Android:text="@string/monthly_sales"
+                Android:textColor="@color/tv_Black"
+                Android:textSize="22sp" />
+
+            <TextView
+                Android:id="@+id/sales"
+                Android:layout_width="0dp"
+                Android:layout_height="wrap_content"
+                Android:layout_marginLeft="5dp"
+                Android:layout_weight="1"
+                Android:textColor="@color/tv_Black"
+                Android:textSize="22sp" />
+
+            <TextView
+                Android:layout_width="wrap_content"
+                Android:layout_height="wrap_content"
+                Android:text="@string/leave_counts"
+                Android:textColor="@color/tv_Black"
+                Android:textSize="22sp" />
+
+            <TextView
+                Android:id="@+id/counts"
+                Android:layout_width="0dp"
+                Android:layout_height="wrap_content"
+                Android:layout_marginLeft="5dp"
+                Android:layout_weight="1"
+                Android:textColor="@color/tv_Black"
+                Android:textSize="22sp" />
+
+            <TextView
+                Android:id="@+id/createtime"
+                Android:layout_width="0dp"
+                Android:layout_height="wrap_content"
+                Android:layout_marginLeft="5dp"
+                Android:layout_weight="1"
+                Android:textColor="@color/gray"
+                Android:textSize="22sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

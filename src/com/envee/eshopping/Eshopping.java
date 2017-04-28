@@ -1,6 +1,7 @@
 package com.envee.eshopping;
 
 import com.envee.eshopping.data.GoodsData;
+import com.envee.eshopping.data.ObbManager;
 import com.envee.eshopping.fragment.HomeFragment;
 import com.envee.eshopping.fragment.MyaccountFragment;
 import com.envee.eshopping.fragment.ShoppingcartFragment;
@@ -19,12 +20,18 @@ import android.widget.TextView;
 public class Eshopping extends FragmentActivity implements OnClickListener {
 
 	// Initialize some constant variables
-
+	private static String TAG = "eshopping";
+	
 	// 1. The bottom btns
-	private ImageView[] arrBotBtnView = new ImageView[3];
+	private View[] arrBotBtnView = new View[3];
 
 	private int[] arrBotBtnId = { R.id.bt_homepage, R.id.bt_shoppingcart,
 			R.id.bt_myaccount };
+	
+	private ImageView[] arrBotImgView = new ImageView[3];
+	
+	private int[] arrBotImgId = { R.id.img_homepage, R.id.img_shoppingcart,
+			R.id.img_myaccount };
 
 	private int[] arrBotBtnFcImg = { R.drawable.img_homepage_fc,
 			R.drawable.img_shoppingcart_fc, R.drawable.img_myaccount_fc };
@@ -39,26 +46,29 @@ public class Eshopping extends FragmentActivity implements OnClickListener {
 	private ShoppingcartFragment fragShoppingCart = null;
 	private MyaccountFragment fragMyaccount = null;
 	
+	// 3. Files relative variable
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.eshopping_activity);
-		initSavedData();
+		setContentView(R.layout.eshopping_activity_horizontal);
+		initData();
 		initView();
 		selectBottomBtnById(arrBotBtnId[0]);
 	}
 
-	private void initSavedData() {
+	private void initData() {
 		// TODO: Initialize saved data
-		GoodsData goodsdata = new GoodsData(this);
+		GoodsData goodsdata = GoodsData.getInstance(this);
 		// Read json and fill the goods data db
 	}
 
 	private void initView() {
 		// 1. Set listener of the button clicks
 		for (int i = 0; i < arrBotBtnView.length; i++) {
-			arrBotBtnView[i] = (ImageView) findViewById(arrBotBtnId[i]);
+			arrBotImgView[i] = (ImageView) findViewById(arrBotImgId[i]);
+			
+			arrBotBtnView[i] = (View) findViewById(arrBotBtnId[i]);
 			arrBotBtnView[i].setOnClickListener(this);
 		}
 	}
@@ -72,11 +82,11 @@ public class Eshopping extends FragmentActivity implements OnClickListener {
 	private void selectBottomBtnById(int id) {
 		for (int i = 0; i < arrBotBtnId.length; i++) {
 			if (id == arrBotBtnId[i]) {
-				arrBotBtnView[i].setImageResource(arrBotBtnFcImg[i]);
-				showFragmentSelected(id);
+				arrBotImgView[i].setImageResource(arrBotBtnFcImg[i]);
+				showFragmentSelected(arrBotBtnId[i]);
 				continue;
 			}
-			arrBotBtnView[i].setImageResource(arrBotBtnNmImg[i]);
+			arrBotImgView[i].setImageResource(arrBotBtnNmImg[i]);
 		}
 	}
 

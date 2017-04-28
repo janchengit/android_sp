@@ -12,10 +12,17 @@
         android:background="#FFFFFF"
         android:src="@drawable/search" />
 
-    <ListView
-        android:id="@+id/goods_list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/btn_go_goodsactivity"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@drawable/menu_1_1" />
+    </ScrollView>
 
 </LinearLayout>

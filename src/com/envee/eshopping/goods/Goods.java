@@ -1,18 +1,24 @@
 package com.envee.eshopping.goods;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Goods {
+import com.envee.eshopping.data.ObbManager;
+
+public class Goods implements GoodsInterface {
 
 	private int id;
 	private int price;
 	private int sales;
 	private int counts;
 	private String name;
+	private String createtime;
 	private String describe;
 	private String etcfile;
-	private List<String> listPicShow;
-	private List<Evaluation> listEvaluation;
+
+	// private String listPicShow;
+	// private String listEvaluation;
 
 	public Goods() {
 		// TODO: init with json obj
@@ -58,6 +64,14 @@ public class Goods {
 		this.name = name;
 	}
 
+	public String getCreatetime() {
+		return createtime;
+	}
+
+	public void setCreatetime(String createtime) {
+		this.createtime = createtime;
+	}
+
 	public String getDescribe() {
 		return describe;
 	}
@@ -74,20 +88,45 @@ public class Goods {
 		this.etcfile = etcfile;
 	}
 
-	public List<String> getListPicShow() {
-		return listPicShow;
+	@Override
+	public List<String> getGoodsImgList() {
+		// TODO Auto-generated method stub
+		List<String> listGoodsImgs = getImgsPathByEtc(etcfile);
+
+		return listGoodsImgs;
 	}
 
-	public void setListPicShow(List<String> listPicShow) {
-		this.listPicShow = listPicShow;
+	private List<String> getImgsPathByEtc(String string) {
+
+		List<String> imagePathList = new ArrayList<String>();
+		// TODO: Here maybe from other PATH, not only OBB file
+		String filePath = ObbManager.getInstance(null).getObbMountPath()
+				+ File.separator + string;
+		File fileAll = new File(filePath);
+		File[] files = fileAll.listFiles();
+
+		for (int i = 0; i < files.length; i++) {
+			File file = files[i];
+			if (checkIsImageFile(file.getPath())) {
+				imagePathList.add(file.getPath());
+			}
+		}
+
+		return imagePathList;
 	}
 
-	public List<Evaluation> getListEvaluation() {
-		return listEvaluation;
-	}
+	private boolean checkIsImageFile(String fName) {
+		boolean isImageFile = false;
 
-	public void setListEvaluation(List<Evaluation> listEvaluation) {
-		this.listEvaluation = listEvaluation;
+		String FileEnd = fName.substring(fName.lastIndexOf(".") + 1,
+				fName.length()).toLowerCase();
+		if (FileEnd.equals("jpg") || FileEnd.equals("png")
+				|| FileEnd.equals("gif") || FileEnd.equals("jpeg")
+				|| FileEnd.equals("bmp")) {
+			isImageFile = true;
+		} else {
+			isImageFile = false;
+		}
+		return isImageFile;
 	}
-
 }

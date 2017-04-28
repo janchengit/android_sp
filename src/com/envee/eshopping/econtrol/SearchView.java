@@ -112,10 +112,10 @@ public class SearchView extends LinearLayout {
 			@Override
 			public void afterTextChanged(Editable s) {
 
-				if (s.toString().trim().length() != 0) {
+				//if (s.toString().trim().length() != 0) {
 					String tvString = etSearch.getText().toString();
 					queryData(tvString);
-				}
+				//}
 			}
 		});
 
